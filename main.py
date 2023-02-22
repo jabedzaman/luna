@@ -1,6 +1,7 @@
 from question import ask_question
 from display import clear_terminal, print_loading
 from filehandling import move_file, rename
+from ytdl import ytdl
 import argparse
 import time
 
@@ -8,12 +9,13 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", help="enable file management mode", action="store_true")
+    parser.add_argument("-ytdl", "--youtubedl", help="download youtube video", action="store_true")
     args = parser.parse_args()
 
     clear_terminal()
 
     if args.file:
-        print("Welcome to file management mode!")
+        print("luna is here to help you manage your files")
         command = input("Enter a command (e.g. 'move', 'rename'): ")
         if command == "move":
             src_path = input("Enter the path of the file to move: ")
@@ -25,6 +27,14 @@ def main():
             new_name = input("Enter the new name: ")
             rename(src_path, new_name)
             exit()
+        else:
+            print("Invalid command.")
+            exit()
+        
+    if args.youtubedl:
+       print("luna is here to help you download youtube videos")
+       ytdl()
+       exit()
 
     print("Hello! I'm Luna, your personal desktop assistant.")
     print("What can I help you with today?")
