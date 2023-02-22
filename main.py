@@ -10,7 +10,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", help="enable file management mode", action="store_true")
     parser.add_argument("-ytdl", "--youtubedl", help="download youtube video", action="store_true")
-    parser.add_argument("-h", "--help", help="show this help message and exit", action="store_true")
+    # parser.add_argument("-h", "--help", help="show this help message and exit", action="store_true")
     args = parser.parse_args()
 
     clear_terminal()
@@ -37,14 +37,14 @@ def main():
        ytdl()
        exit()
 
-    if args.help:
-        print("luna is your personal tui assistant")
-        print("usage: main.py [-flag]")
-        print("optional arguments:")
-        print("  -h, --help  show this help message and exit")
-        print("  -f, --file  enable file management mode")
-        print("  -ytdl, --youtubedl  download youtube video")
-        exit()
+    # if args.help:
+    #     print("luna is your personal tui assistant")
+    #     print("usage: main.py [-flag]")
+    #     print("optional arguments:")
+    #     print("  -h, --help  show this help message and exit")
+    #     print("  -f, --file  enable file management mode")
+    #     print("  -ytdl, --youtubedl  download youtube video")
+    #     exit()
 
 
     print("Hello! I'm Luna, your personal desktop assistant.")
